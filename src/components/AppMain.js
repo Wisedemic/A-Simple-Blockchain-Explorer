@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 import AddBlock from './AddBlock';
-import BlockExplorer from './BlockExplorer';
 
 // Export Component
 export default class AppMain extends Component {
@@ -11,7 +10,6 @@ export default class AppMain extends Component {
 			<div className="container">
 				<h4 className="subtitle has-text-centered">Add something to the blockchain!</h4>
 				<AddBlock />
-				<BlockExplorer />
 			</div>
 		);
 	}
