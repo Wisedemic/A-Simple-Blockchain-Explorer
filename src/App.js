@@ -1,11 +1,19 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
+import React from 'react';
+// import store from './store/';
 
-import { Container, Box  } from 'bloomer';
+import Header from './components/Header';
+import AppMain from './components/AppMain';
+import Footer from './components/Footer';
 
-class App extends Component {
+class App extends React.Component {
   render() {
-    return (<Container><Box>Hi!</Box></Container>);
+    return (
+        <div>
+          <Header/>
+          <AppMain />
+          <Footer />
+        </div>
+    );
   }
 }
 

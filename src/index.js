@@ -2,13 +2,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import './stylesheets/Bulma.css';
 import registerServiceWorker from './registerServiceWorker';
 
+// Grab our React App container
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root')
-)
+// Render our DOM
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // Start React
 registerServiceWorker();
