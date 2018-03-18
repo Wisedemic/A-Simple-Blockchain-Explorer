@@ -1,11 +1,18 @@
+// Import React
 import React, { Component } from 'react';
 
-import { Section } from 'react-bulma-components';
+import AddBlock from './AddBlock';
+import BlockExplorer from './BlockExplorer';
 
-class AppMain extends Component {
-  render() {
-    return (<Section>App Main</Section>);
-  }
+// Export Component
+export default class AppMain extends Component {
+	render() {
+		return(
+			<div className="container">
+				<h4 className="subtitle has-text-centered">Add something to the blockchain!</h4>
+				<AddBlock />
+				<BlockExplorer />
+			</div>
+		);
+	}
 }
-
-export default AppMain;

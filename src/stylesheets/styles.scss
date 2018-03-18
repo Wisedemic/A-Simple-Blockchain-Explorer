@@ -1,0 +1,35 @@
+// html {
+// 	overflow-y: hidden !important;
+// }
+
+.hero-body .container {
+	max-width: 700px !important;
+}
+
+#addBlock {
+	margin-bottom: 1rem;
+	.button {
+		margin-right: 0.5rem;
+	}
+}
+
+#appFooter {
+	padding: 1.5rem;
+	background-color: #fff;
+	.content p {
+		color: black;
+	}
+	a {
+		color: #209cee;
+	}
+	a:hover {
+		color: #066db1;
+	}
+}
+
+.panel-block {
+	background-color: white;
+}
+.panel-text {
+	color: black;
+}

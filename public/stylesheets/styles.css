@@ -1,0 +1,23 @@
+.hero-body .container {
+  max-width: 700px !important; }
+
+#addBlock {
+  margin-bottom: 1rem; }
+  #addBlock .button {
+    margin-right: 0.5rem; }
+
+#appFooter {
+  padding: 1.5rem;
+  background-color: #fff; }
+  #appFooter .content p {
+    color: black; }
+  #appFooter a {
+    color: #209cee; }
+  #appFooter a:hover {
+    color: #066db1; }
+
+.panel-block {
+  background-color: white; }
+
+.panel-text {
+  color: black; }
