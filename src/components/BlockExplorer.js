@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
+import Block from './components/Block';
+
 export default class BlockExplorer extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			blocks: props.blocks
+		}
+	}
+	
 	render() {
 		return (
 			<div id="BlockExplorer">
@@ -8,12 +17,7 @@ export default class BlockExplorer extends Component {
 					<p className="panel-heading">
 						Block Explorer
 					</p>
-					<a className="panel-block">
-						<span className="panel-icon">
-							<i className="fa fa-book"></i>
-						</span>
-						<span className="panel-text">Block 0</span>
-					</a>
+					<Block blocks={this.props.blocks} />
 				</nav>
 			</div>
 		);

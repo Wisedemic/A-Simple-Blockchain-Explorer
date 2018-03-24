@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 
+let block = require('../blockchain/block.js');
+
 export default class AddBlock extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {message: ''};
 
 		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.submitBlock = this.submitBlock.bind(this);
 	}
 
 	handleChange(event) {
 		this.setState({message: event.target.value});
 	}
 
-	handleSubmit(event) {
+	submitBlock(event) {
 		event.preventDefault();
 		if (this.state.message.length > 0 ) {
+			console.log(block);
 			alert('A Block was submitted: ' + this.state.message);
 		} else {
 			alert('You must enter a message!');
@@ -25,7 +28,7 @@ export default class AddBlock extends Component {
 	render() {
 		return (
 			<div id="addBlock">
-			   <form onSubmit={this.handleSubmit}>
+			   <form onSubmit={this.submitBlock}>
 					<div className="field is-grouped is-grouped-centered">
 						<p className="control">
 							<button className="button is-info">
