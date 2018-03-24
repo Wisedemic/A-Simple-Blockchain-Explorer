@@ -3,7 +3,6 @@ This is a project used to learn how to build a react app, as well as building a 
 
 
 # Folder Structure
-After creation, your project should look like this:
 ```
 my-app/
   README.md
