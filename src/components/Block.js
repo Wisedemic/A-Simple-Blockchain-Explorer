@@ -12,9 +12,9 @@ export default class Block extends Component {
 		return (
       <a className="panel-block">
         <span className="panel-icon">
-          <i className="fa fa-book"></i>
+          <i className="fa fa-square"></i>
         </span>
-        <span className="panel-text">Block 0</span>
+        <span className="panel-text">{this.state.message}</span>
       </a>
 		);
 	}

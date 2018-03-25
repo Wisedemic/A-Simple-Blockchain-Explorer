@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Block from './components/Block';
+import Block from './Block';
 
 export default class BlockExplorer extends Component {
 	constructor(props) {
@@ -9,7 +9,7 @@ export default class BlockExplorer extends Component {
 			blocks: props.blocks
 		}
 	}
-	
+
 	render() {
 		return (
 			<div id="BlockExplorer">
