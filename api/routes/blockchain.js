@@ -1,9 +1,11 @@
 var express = require('express');
-var blockchain = express.Router();
+var chain = express.Router();
 
-blockchain.get('/', function(req, res, next) {
-	 res.json({"yay": "woo"});
+let blockchain
+
+chain.get('/', function(req, res, next) {
+	res.json({"yay": "woo"});
    next();
 });
 
-module.exports = blockchain;
+module.exports = chain;

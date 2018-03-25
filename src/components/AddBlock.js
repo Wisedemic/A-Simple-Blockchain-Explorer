@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-let block = require('../blockchain/block.js');
-
 export default class AddBlock extends Component {
 	constructor(props) {
 		super(props);
@@ -18,7 +16,6 @@ export default class AddBlock extends Component {
 	submitBlock(event) {
 		event.preventDefault();
 		if (this.state.message.length > 0 ) {
-			console.log(block);
 			alert('A Block was submitted: ' + this.state.message);
 		} else {
 			alert('You must enter a message!');
