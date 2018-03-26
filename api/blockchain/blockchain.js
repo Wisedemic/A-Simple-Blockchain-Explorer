@@ -11,10 +11,12 @@ module.exports = class Blockchain {
 	createGenesisBlock() {
 		return new Block(0, Date.now(), {message: 'Block 0 - The Genesis Block'}, '0x0');
 	}
-
+	getLatestBlock() {
+		return this.chain[this.chain.length - 1];
+	}
 	addBlock(newBlock) {
 		// Set this new blocks previousHash to the hash of the latest block in the chain
-		newBlock.previousHash = this.chain[this.chain.length - 1].hash;
+		newBlock.previousHash = this.getLatestBlock().hash;
 
 		// Calculate it's Hash
 		newBlock.calculateHash();
@@ -33,14 +35,12 @@ module.exports = class Blockchain {
 		if (!block.previousHash.length > 0) return false;
 
 		// New block previoushHash must = last blocks hash.
-		if (block.previousHash !== this.chain[this.chain.length - 1].hash) return false;
+		if (block.previousHash !== this.getLatestBlock().hash) return false;
 
 		// For the length of the chain, check hashs are = all throughout.
 		for(var i = this.chain.length - 1; i > 0; i--) {
-			console.log(this.chain[i]);
 			if (this.chain[i].previousHash !== this.chain[i - 1].hash) {
-				console.log('[BLOCKCHAIN] -  Block Failed Verification!');
-				console.log(block);
+				console.log('[BLOCKCHAIN] -  Block Failed Verification!', block);
 				return false;
 			}
 		}
