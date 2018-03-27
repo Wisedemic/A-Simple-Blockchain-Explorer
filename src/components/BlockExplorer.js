@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import Block from './Block';
 
 export default class BlockExplorer extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			blocks: props.blocks
-		}
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		blocks: props.blocks
+	// 	}
+	// }
 
 	render() {
 		return (
@@ -17,7 +17,14 @@ export default class BlockExplorer extends Component {
 					<p className="panel-heading">
 						Block Explorer
 					</p>
-					<Block blocks={this.props.blocks} />
+					<a className="panel-block">
+			        <span className="panel-icon">
+			          <i className="fa fa-square"></i>
+			        </span>
+			        <span className="panel-text">Blocks Message Goes Here</span>
+			      </a>
+
+					{/*<Block blocks={this.props.blocks} /> */}
 				</nav>
 			</div>
 		);
