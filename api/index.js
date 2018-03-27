@@ -16,14 +16,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Parse application/json
 app.use(bodyParser.json());
 
-// Grab Blockchain Constructors.
-const Blockchain = require('./blockchain/blockchain.js');
-const Block = require('./blockchain/block.js');
-
-// Construct the chain.
-let blockchain = new Blockchain();
-
 // Routes
 let routes = require('./routes.js')(app);
+
+// Init Blockchain.
+let blockchain = require('./blockchain/blockchain.js');
 
 console.log('[SERVER] React-App API started on port ' + app.get('port'));

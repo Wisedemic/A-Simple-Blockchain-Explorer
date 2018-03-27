@@ -1,9 +1,14 @@
+// Hash functions
 var SHA256 = require('crypto-js');
 
+// Define a Block
 var Block = require('./block.js');
 
-// Define a chain.
-module.exports = class Blockchain {
+// Grab Level
+var level = require('level');
+
+// Define a Blockhain
+const Blockchain = class Blockchain {
 	constructor() {
 		this.chain = [this.createGenesisBlock()];
 	}
@@ -48,3 +53,21 @@ module.exports = class Blockchain {
 		return true;
 	}
 }
+
+// After defining our chain. Attach it to our DB.
+var db = level('./blockchain');
+console.log('[DB] -- Grabbing Blockchain from DB');
+
+db.get('blockchain', function(err, chain) {
+	if (err) console.log(err);
+	// if no chain in db.
+	if (!chain) {
+		db.put('blockchain', new Blockchain(), function(err, chain) {
+			console.log('[DB] -- New Blockchain Created!');
+		});
+	} else {
+		console.log('[DB] -- Expected: Chain Already Exists!');
+	}
+});
+
+module.exports = db;
