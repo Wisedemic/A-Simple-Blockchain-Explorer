@@ -12,6 +12,7 @@ module.exports = class Block {
 		this.data = data; // can be anything.
 		this.hash = this.calculateHash();
 		this.previousHash = previousHash; // The Hash of the previous Block
+		this.nonce = uuidv4(); // Ex. 'f64f2940-fae4-11e7-8c5f-ef356f279131'
 	}
 	// return the Hash of this block
 	calculateHash() {
@@ -20,7 +21,7 @@ module.exports = class Block {
 			this.timestamp +
 			JSON.stringify(this.data) +
 			this.previousHash +
-			uuidv4() // Ex. 'f64f2940-fae4-11e7-8c5f-ef356f279131'
+			this.nonce
 		).toString();
 	}
 }
