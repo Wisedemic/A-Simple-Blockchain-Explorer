@@ -7,7 +7,7 @@ let chain = express.Router();
 
 let BlockchainDB = level('./blockchain');
 
-chain.get('/', function(req, res, next) {
+chain.post('/', function(req, res, next) {
 	BlockchainDB.get('blockchain', function(err, chain) {
 		if (err) console.log(err);
 		if (chain) {
