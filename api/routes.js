@@ -7,7 +7,7 @@ module.exports = function(app) {
 
 	// Catch All
 	app.all('*', function(req, res, next) {
-		res.set('Access-Control-Allow-Origin', process.env.IP);
+		res.set('Access-Control-Allow-Origin', '*');
 		res.set('Access-Control-Allow-Credentials', true);
 		res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
 		res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
@@ -30,7 +30,7 @@ module.exports = function(app) {
 	})
 
 	// Define All Other Routes Here
-	app.use( '/blockchain', exports.blockchain );
+	app.use( '/api/blockchain', exports.blockchain );
 
   // Handle 404 - Last Route
 	app.use(function(req, res, next) {

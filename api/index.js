@@ -1,21 +1,20 @@
-// Setup Express App
+// Setup Express api
 const express = require('express');
-const app = express();
+const api = express();
 
 // Middleware
-const path = require('path');
 const bodyParser = require('body-parser'); //bodyparser + json + urlencoder
 const morgan = require('morgan'); // logger
 
 // Configuration
-app.set('port', 3001); // Set Port Globally
-app.listen(app.get('port')); // Define listening Port
-app.use(bodyParser.urlencoded({extended: true})); // Parse application/x-www-form-urlencoded
-app.use(bodyParser.json()); // Parse application/json
+api.set('port', 3001); // Set Port Globally
+api.listen(api.get('port')); // Define listening Port
+api.use(bodyParser.urlencoded({extended: true})); // Parse application/x-www-form-urlencoded
+api.use(bodyParser.json()); // Parse application/json
 
-// Init Blockchain.
+// Init Blockchain before init express routes.
 const BlockchainDB = require('./blockchain/blockchain.js')(function() {
   // Routes
-  const routes = require('./routes.js')(app);
-  console.log('[SERVER] React-App API started on port ' + app.get('port'));
+  const routes = require('./routes.js')(api);
+  console.log('[SERVER] React-api API started on port ' + api.get('port'));
 });
