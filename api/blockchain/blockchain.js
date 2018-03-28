@@ -69,7 +69,6 @@ module.exports = (cb) => {
 			db.put('blockchain', new Blockchain(), function(err, chain) {
 				console.log('[DB] -- NO BLOCKCHAIN DETECTED!');
 				console.log('[DB] -- New Blockchain Created!');
-				delete db;
 				cb();
 			});
 		} else {
