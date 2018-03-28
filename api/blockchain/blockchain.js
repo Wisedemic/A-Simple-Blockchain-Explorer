@@ -64,7 +64,6 @@ module.exports = (cb) => {
 
 	// Grab the chain if it exists
 	db.get('blockchain', function(err, chain) {
-		if (err) console.log(err);
 		// if no chain in db.
 		if (!chain) {
 			db.put('blockchain', new Blockchain(), function(err, chain) {
