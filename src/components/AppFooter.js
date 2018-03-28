@@ -6,7 +6,7 @@ export default class AppFooter extends Component {
 			<div className="container">
 				<div className="content has-text-centered">
 					<p>Made by: <a href="https://tristannavarrete.com/">Tristan Navarrete</a></p>
-					<a href="#"><i className="fa fa-github" style={{fontSize: '24px'}}></i></a>
+					<a href="https://github.com/Wisedemic/test-react-app"><i className="fa fa-github" style={{fontSize: '24px'}}></i></a>
 				</div>
 			</div>
 		);
