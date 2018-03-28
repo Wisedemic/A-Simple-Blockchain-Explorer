@@ -2,14 +2,28 @@ import React, { Component } from 'react';
 
 import Block from './Block';
 
-export default class BlockExplorer extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		blocks: props.blocks
-	// 	}
-	// }
+import axios from 'axios';
 
+export default class BlockExplorer extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			blocks: []
+		};
+	}
+	componentDidMount() {
+    axios.post('http://localhost:3001/api/blockchain/')
+      .then(res => {
+				if (res) {
+	       	this.setState({blocks: res.data});
+				} else {
+					this.setState({blocks: []});
+				}
+      })
+			.catch((err) => {
+				console.log(err);
+			});
+  }
 	render() {
 		return (
 			<div id="BlockExplorer">
@@ -17,14 +31,9 @@ export default class BlockExplorer extends Component {
 					<p className="panel-heading">
 						Block Explorer
 					</p>
-					<a className="panel-block">
-			        <span className="panel-icon">
-			          <i className="fa fa-square"></i>
-			        </span>
-			        <span className="panel-text">Blocks Message Goes Here</span>
-			      </a>
-
-					{/*<Block blocks={this.props.blocks} /> */}
+					{this.state.blocks.map((block) => {
+						return <Block key={block.index} data={block} />
+					})}
 				</nav>
 			</div>
 		);

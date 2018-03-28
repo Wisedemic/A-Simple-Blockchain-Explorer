@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 export default class Block extends Component {
-	// constructor(props) {
-	// 	// super(props);
-	// 	// this.state = {
-  //   //
-	// 	// }
-	// }
+	constructor(props) {
+		super(props);
+		console.log(props);
+		this.state = props.data;
+	}
 
 	render() {
 		return (
@@ -14,7 +13,7 @@ export default class Block extends Component {
         <span className="panel-icon">
           <i className="fa fa-square"></i>
         </span>
-        <span className="panel-text">{this.state.message}</span>
+        <span className="panel-text">{this.state.data.message}</span>
       </a>
 		);
 	}
