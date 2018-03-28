@@ -1,6 +1,6 @@
 // Setup Express App
-let express = require('express');
-let app = express();
+const express = require('express');
+const app = express();
 
 // Middleware
 const path = require('path');
@@ -14,9 +14,8 @@ app.use(bodyParser.urlencoded({extended: true})); // Parse application/x-www-for
 app.use(bodyParser.json()); // Parse application/json
 
 // Init Blockchain.
-let BlockchainDB = require('./blockchain/blockchain.js');
-
-// Routes
-let routes = require('./routes.js')(app);
-
-console.log('[SERVER] React-App API started on port ' + app.get('port'));
+const BlockchainDB = require('./blockchain/blockchain.js')(function() {
+  // Routes
+  const routes = require('./routes.js')(app);
+  console.log('[SERVER] React-App API started on port ' + app.get('port'));
+});
