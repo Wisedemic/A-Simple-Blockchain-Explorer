@@ -1,14 +1,13 @@
+// LevelDB
+const level = require('level');
 // Hash functions
-var SHA256 = require('crypto-js');
-
+const SHA256 = require('crypto-js');
 // Define a Block
-var Block = require('./block.js');
+let Block = require('./block.js');
 
-// Grab Level
-var level = require('level');
-
-// Define a Blockhain
+// Define the Blockhain
 const Blockchain = class Blockchain {
+	// Build the blockchain.
 	constructor() {
 		this.chain = [this.createGenesisBlock()];
 	}
@@ -16,9 +15,12 @@ const Blockchain = class Blockchain {
 	createGenesisBlock() {
 		return new Block(0, Date.now(), {message: 'Block 0 - The Genesis Block'}, '0x0');
 	}
+
+	// Returns the latest block.
 	getLatestBlock() {
 		return this.chain[this.chain.length - 1];
 	}
+
 	addBlock(newBlock) {
 		// Set this new blocks previousHash to the hash of the latest block in the chain
 		newBlock.previousHash = this.getLatestBlock().hash;
@@ -26,7 +28,7 @@ const Blockchain = class Blockchain {
 		// Calculate it's Hash
 		newBlock.calculateHash();
 
-		// Verify Block
+		// Verify it
 		if (this.verifyBlock(newBlock)) {
 			this.chain.push(newBlock);
 		} else {
@@ -36,20 +38,20 @@ const Blockchain = class Blockchain {
 
 	verifyBlock(block) {
 		console.log('[BLOCKCHAIN] -  New Block Verification Requested!');
+
 		// Must have a previousHash.
 		if (!block.previousHash.length > 0) return false;
 
 		// New block previoushHash must = last blocks hash.
 		if (block.previousHash !== this.getLatestBlock().hash) return false;
 
-		// For the length of the chain, check hashs are = all throughout.
+		// For the length of the chain, check hashs are = allthroughout.
 		for(var i = this.chain.length - 1; i > 0; i--) {
 			if (this.chain[i].previousHash !== this.chain[i - 1].hash) {
 				console.log('[BLOCKCHAIN] -  Block Failed Verification!', block);
 				return false;
 			}
 		}
-
 		return true;
 	}
 }
@@ -58,6 +60,7 @@ const Blockchain = class Blockchain {
 var db = level('./blockchain');
 console.log('[DB] -- Grabbing Blockchain from DB');
 
+// Grab the chain if it exists
 db.get('blockchain', function(err, chain) {
 	if (err) console.log(err);
 	// if no chain in db.
@@ -70,4 +73,5 @@ db.get('blockchain', function(err, chain) {
 	}
 });
 
+// Return DB object.
 module.exports = db;

@@ -4,7 +4,6 @@ export default class AddBlock extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {message: ''};
-
 		this.handleChange = this.handleChange.bind(this);
 		this.submitBlock = this.submitBlock.bind(this);
 	}
