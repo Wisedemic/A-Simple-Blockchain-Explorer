@@ -59,7 +59,7 @@ module.exports = (cb) => {
 	}
 
 	// After defining our chain. Attach it to our DB.
-	let db = level('./blockchain');
+	let db = level('./blockchain', {valueEncoding: 'json'});
 	console.log('[DB] -- Grabbing Blockchain from DB');
 
 	// Grab the chain if it exists
