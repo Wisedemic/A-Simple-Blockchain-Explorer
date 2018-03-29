@@ -109,6 +109,7 @@
   "devDependencies": {
     "node-sass": "^4.7.2",
     "node-sass-chokidar": "^1.1.2",
+    "nodemon": "^1.17.2",
     "sass-loader": "^6.0.7"
   }
 }
