@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import axios from 'axios';
+
 export default class AddBlock extends Component {
 	constructor(props) {
 		super(props);
@@ -15,7 +17,15 @@ export default class AddBlock extends Component {
 	submitBlock(event) {
 		event.preventDefault();
 		if (this.state.message.length > 0 ) {
-			alert('A Block was submitted: ' + this.state.message);
+			axios.put('http://localhost:3001/api/blockchain/add', {
+				message: this.state.message
+			})	
+			.then(res => {
+				//update the view
+			}).catch(err => {
+
+			});
+			// alert('A Block was submitted: ' + this.state.message);
 		} else {
 			alert('You must enter a message!');
 		}
