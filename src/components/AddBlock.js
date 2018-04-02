@@ -19,11 +19,12 @@ export default class AddBlock extends Component {
 		if (this.state.message.length > 0 ) {
 			axios.put('http://localhost:3001/api/blockchain/add', {
 				message: this.state.message
-			})	
+			})
 			.then(res => {
 				//update the view
+				console.log(res);
 			}).catch(err => {
-
+				console.log(err);
 			});
 			// alert('A Block was submitted: ' + this.state.message);
 		} else {
@@ -43,7 +44,16 @@ export default class AddBlock extends Component {
 							</button>
 						</p>
 						<p className="control is-expanded">
-							<input type="text" className="input is-dark" value={this.state.message} onChange={this.handleChange} placeholder="Type a message you would like permenantly added to this Blockchain!" />
+							<input
+								type="text"
+								className="input is-dark"
+								value={this.state.message}
+								onChange={this.handleChange}
+								onKeyPress={(e) => {
+									if (e.key === 'Enter') this.submitBlock
+								}}
+								placeholder="Type a message you would like permenantly added to this Blockchain!"
+							/>
 						</p>
 					</div>
 			   </form>
