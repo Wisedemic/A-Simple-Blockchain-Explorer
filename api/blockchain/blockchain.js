@@ -66,13 +66,17 @@ module.exports = (cb) => {
 	db.get('blockchain', function(err, chain) {
 		// if no chain in db.
 		if (!chain) {
-			db.put('blockchain', new Blockchain(), function(err, chain) {
+			let blockchain = new Blockchain().chain;
+			db.put('blockchain', blockchain, function(err) {
+				if (err) console.log(err);
 				console.log('[DB] -- NO BLOCKCHAIN DETECTED!');
 				console.log('[DB] -- New Blockchain Created!');
+				console.log('[DB] -- Blockchain DB Initialized. App is ready to start!');
 				cb();
 			});
 		} else {
 			console.log('[DB] -- Expected: Blockchain Already Exists!');
+			console.log('[DB] -- Blockchain DB Initialized. App is ready to start!');
 			cb();
 		}
 	});
