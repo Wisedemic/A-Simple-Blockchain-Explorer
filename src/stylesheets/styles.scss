@@ -2,6 +2,42 @@
 // 	overflow-y: hidden !important;
 // }
 
+.panel-block {
+	transition: 0.2s ease-in-out;
+	display: flex !important;
+	flex-direction: column;
+	align-items: left !important;
+	padding: 0px !important;
+
+	.panel-header {
+		.collapsed-state {
+			align-self: flex-end;
+			color: #7a7a7a;
+			text-align: right;
+		}
+		width: 100%;
+		padding: 1rem;
+		flex-direction: row;
+		&:hover {
+			background-color: #f5f5f5;
+		}
+	}
+
+	.panel-body {
+		width: 100%;
+	}
+	td {
+	 	font-size: 14px;
+	}
+	.panel-icon {
+		vertical-align: middle;
+		line-height: 0.8rem;
+	}
+	.block-details {
+		color: black;
+	}
+}
+
 .hero-body .container {
 	max-width: 700px !important;
 }
@@ -30,6 +66,7 @@
 .panel-block {
 	background-color: white;
 }
+
 .panel-text {
 	color: black;
 }
