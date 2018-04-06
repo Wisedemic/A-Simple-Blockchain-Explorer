@@ -22,7 +22,7 @@ export default class AddBlock extends Component {
 			})
 			.then(res => {
 				//update the view
-				console.log(res);
+				return this.props.updateBlocks(res.data);
 			}).catch(err => {
 				console.log(err);
 			});
