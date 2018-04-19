@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 export default class Block extends Component {
 	constructor(props) {
@@ -29,7 +30,7 @@ export default class Block extends Component {
 								</tr>
 								<tr>
 						      <th>Timestamp</th>
-						      <td>{this.state.timestamp}</td>
+						      <td>{moment(this.state.timestamp*1000).format("dddd, MMMM Do YYYY, h:mm:ss a")}</td>
 								</tr>
 								<tr>
 						      <th>Previous Hash</th>
