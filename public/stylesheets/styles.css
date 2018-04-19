@@ -35,6 +35,21 @@
 #appFooter {
   padding: 1.5rem;
   background-color: #fff; }
+  #appFooter .title {
+    color: #363636; }
+  #appFooter .level-item {
+    flex-direction: column; }
+    #appFooter .level-item p {
+      color: #363636; }
+    #appFooter .level-item a {
+      color: #209cee; }
+      #appFooter .level-item a i {
+        font-size: 24px; }
+        #appFooter .level-item a i:active, #appFooter .level-item a i:hover {
+          color: #209cee; }
+      #appFooter .level-item a:active, #appFooter .level-item a:hover,
+      #appFooter .level-item a i {
+        color: #363636; }
   #appFooter .content p {
     color: black; }
   #appFooter a {

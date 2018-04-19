@@ -11,7 +11,7 @@ export default class AppHeader extends Component {
 				<Navbar>
 					<Navbar.Brand>
 						<div className="navbar-item">
-							<h1>React Blockchain Testgrounds</h1>
+							<h1>A Simple Blockchain Explorer</h1>
 						</div>
 						<Navbar.Burger />
 					</Navbar.Brand>

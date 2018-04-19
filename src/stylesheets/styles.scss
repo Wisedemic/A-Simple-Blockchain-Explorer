@@ -1,7 +1,3 @@
-// html {
-// 	overflow-y: hidden !important;
-// }
-
 .panel-block {
 	transition: 0.2s ease-in-out;
 	display: flex !important;
@@ -52,6 +48,32 @@
 #appFooter {
 	padding: 1.5rem;
 	background-color: #fff;
+
+	.title {
+		color: #363636;
+	}
+	.level-item {
+		flex-direction: column;
+		p {
+			color: #363636;
+		}
+		a {
+			color: #209cee;
+			i {
+				font-size: 24px;
+				&:active,
+				&:hover {
+					color: #209cee;
+				}
+			}
+			&:active,
+			&:hover,
+			i {
+				color: #363636;
+			}
+		}
+	}
+
 	.content p {
 		color: black;
 	}
