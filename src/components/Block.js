@@ -32,12 +32,12 @@ export default class Block extends Component {
 						      <td>{this.state.timestamp}</td>
 								</tr>
 								<tr>
-						      <th>Hash</th>
-						      <td>{this.state.hash}</td>
-								</tr>
-								<tr>
 						      <th>Previous Hash</th>
 						      <td>{this.state.previousHash}</td>
+								</tr>
+								<tr>
+						      <th>Hash</th>
+						      <td>{this.state.hash}</td>
 								</tr>
 								<tr>
 						      <th>Nonce</th>
