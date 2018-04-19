@@ -1,6 +1,7 @@
 ### What is this?
-This is a project used to learn how to build a react app, as well as building a simple blockchain that gets saved incase the server shuts down, and also has an API.
+This was built in order to learn how to build a React application, as well as building a simple blockchain that is stored in levelDB.
 
+This app hopes to demonstrate the simplicity of how a blockchain works.
 
 # Folder Structure
 ```
@@ -17,9 +18,9 @@ my-app/
 		Block.js -- What a block looks like in the explorer
 ```
 
+--------------------
 
-
-### Build information
+## Build information
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
