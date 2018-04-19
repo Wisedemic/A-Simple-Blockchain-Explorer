@@ -19,8 +19,7 @@ export default class App extends Component {
 					<div id="appContent" className="hero-body">
 					  <BrowserRouter basename="/">
 							<Switch>
-								<Route exact path="/" component={AppMain} />
-								<Route path="/explorer" component={BlockExplorer} />
+								<Route path="/" component={AppMain} />
 							</Switch>
 						</BrowserRouter>
 					</div>
