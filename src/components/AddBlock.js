@@ -22,6 +22,7 @@ export default class AddBlock extends Component {
 			})
 			.then(res => {
 				//update the view
+				this.setState({message: ''})
 				return this.props.updateBlocks(res.data);
 			}).catch(err => {
 				console.log(err);
