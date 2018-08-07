@@ -1,24 +1,10 @@
-### What is this?
-This was built in order to learn how to build a React application, as well as building a simple blockchain that is stored in levelDB.
+# A Simple Blockchain Explorer
 
-This app hopes to demonstrate the simplicity of how a blockchain works.
+This was the first application I built using react, whilst learning how to build a simple blockchain.
 
-# Folder Structure
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  api/
-    blockchain/ -- Currently holding all blockchain logic.
-    routes/
-  src/
-    components/
-	 	BlockExplorer.js -- Fetches Blocks and displays them. Updates upon addition of a block.
-		Block.js -- What a block looks like in the explorer
-```
+- The result, was a simple blockchain explorer.
 
---------------------
+Latest Update: August 2018 (Incomplete)
+Description: Giving this app a rework!
 
-## Build information
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Using: React, Redux, Webpack, and LevelDB for a file-based storage for the blockchain.

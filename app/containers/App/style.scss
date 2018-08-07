@@ -1,0 +1,65 @@
+
+.panel-block {
+  transition: 0.2s ease-in-out;
+  display: flex !important;
+  flex-direction: column;
+  align-items: left !important;
+  padding: 0px !important; }
+  .panel-block .panel-header {
+    width: 100%;
+    padding: 1rem;
+    flex-direction: row; }
+    .panel-block .panel-header .collapsed-state {
+      align-self: flex-end;
+      color: #7a7a7a;
+      text-align: right; }
+    .panel-block .panel-header:hover {
+      background-color: #f5f5f5; }
+  .panel-block .panel-body {
+    width: 100%; }
+  .panel-block td {
+    font-size: 14px; }
+  .panel-block .panel-icon {
+    vertical-align: middle;
+    line-height: 0.8rem; }
+  .panel-block .block-details {
+    color: black; }
+
+.hero-body .container {
+  max-width: 700px !important; }
+
+#addBlock {
+  margin-bottom: 1rem; }
+  #addBlock .button {
+    margin-right: 0.5rem; }
+
+#appFooter {
+  padding: 1.5rem;
+  background-color: #fff; }
+  #appFooter .title {
+    color: #363636; }
+  #appFooter .level-item {
+    flex-direction: column; }
+    #appFooter .level-item p {
+      color: #363636; }
+    #appFooter .level-item a {
+      color: #209cee; }
+      #appFooter .level-item a i {
+        font-size: 24px; }
+        #appFooter .level-item a i:active, #appFooter .level-item a i:hover {
+          color: #209cee; }
+      #appFooter .level-item a:active, #appFooter .level-item a:hover,
+      #appFooter .level-item a i {
+        color: #363636; }
+  #appFooter .content p {
+    color: black; }
+  #appFooter a {
+    color: #209cee; }
+  #appFooter a:hover {
+    color: #066db1; }
+
+.panel-block {
+  background-color: white; }
+
+.panel-text {
+  color: black; }

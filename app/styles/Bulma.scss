@@ -1,0 +1,33 @@
+@import "./node_modules/bulma/sass/utilities/initial-variables";
+@import "./node_modules/bulma/sass/utilities/functions";
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+$family-serif: "Merriweather", "Georgia", serif;
+$family-lato: 'Lato';
+// $primary: #8A4FFF;
+// $info: #C3BEF7;
+$warning: #ffcc00;
+$warning-invert: white;
+// $danger: $orange;
+
+$family-primary: $family-lato;
+
+// 4. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+
+// 5. Add new color variables to the color map.
+@import "./node_modules/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// 6. Import the rest of Bulma
+@import "./node_modules/bulma/bulma.sass";
