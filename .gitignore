@@ -1,6 +1,7 @@
 build
 node_modules
 .env
+blockchain
 
 .DS_Store
 npm-debug.log
